@@ -66,3 +66,8 @@ Photo
 Puis effectuer les commandes suivante ``` sudo netplan try ; sudo netplan apply ```
 
 Puis activer l'interface ``` sudo ip link set enp0s8 up ```
+
+3. La configuration du serveur DHCP se fait via le fichier /etc/dhcp/dhcpd.conf. Faites une sauvegarde
+du fichier existant sous le nom dhcpd.conf.bak puis éditez le fichier dhcpd.conf avec les informations
+suivantes :
+
