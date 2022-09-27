@@ -71,3 +71,31 @@ Puis activer l'interface ``` sudo ip link set enp0s8 up ```
 du fichier existant sous le nom dhcpd.conf.bak puis éditez le fichier dhcpd.conf avec les informations
 suivantes :
 
+Photo
+
+4. Editez le fichier /etc/default/isc-dhcp-server afin de spécifier l’interface sur laquelle le serveur
+doit écouter
+
+Photo
+
+5. Validez votre fichier de configuration avec la commande dhcpd -t puis redémarrez le serveur DHCP
+(avec la commande systemctl restart isc-dhcp-server) et vérifiez qu’il est actif.
+
+Photo
+
+6. Notre serveur DHCP est configuré ! Passons désormais au client. Si vous avez suivi le sujet du TP 1,
+le client a été créé en clonant la machine virtuelle du serveur. Par conséquent, son nom d’hôte est
+toujours serveur. Vérifiez que la carte réseau du client est débranchée, puis démarrez le client (il
+est possible qu’il mette un certain temps à démarrer : ceci est dû à l’absence de connexion Internet).
+Comme pour le serveur, désinstallez ensuite cloud-init, puis modifiez le nom de la machine (elle doit
+s’appeler client.tpadmin.local).
+
+Photo
+
+9. Vérifiez que les deux machines peuvent communiquer via leur adresse IP, à l’aide de la commande ping.
+
+Photo 
+Relatif pas par un / 
+
+10. Modifiez la configuration du serveur pour que l’interface réseau du client reçoive l’IP statique 192.168.100.20 :
+
