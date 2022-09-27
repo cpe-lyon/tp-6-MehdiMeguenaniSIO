@@ -37,3 +37,32 @@ script au démarrage. Nous ne nous en servirons pas et sa présence interfère a
 particulier le changement de nom d’hôte) ; par ailleurs, vos machines démarreront plus rapidement.
 Désinstallez complètement ce paquet (il faudra penser à le faire également sur le client
 ensuite.)
+
+Afin d'effacer ce paquet il faut faire la commande ``` sudo apt-get purge cloud-init ```
+
+4. Les deux machines serveur et client se trouveront sur le domaine tpadmin.local. A l’aide de la
+commande hostnamectl renommez le serveur (le changement doit persister après redémarrage,
+donc cherchez les bonnes options dans le manuel !). On peut afficher le nom et le domaine d’une
+machine avec les commandes hostname et/ou dnsdomainname ou en affichant le contenu du fichier
+/etc/hostname
+
+Afin de modifier le hostname des Vm il faut effectuer la commande ``` hostnamectl set-hostname tpadmin.local ``` ce qui va modifier le fichier /etc/hostname
+
+# Exercice 3. Installation du serveur DHCP
+
+1. Sur le serveur, installez le paquet isc-dhcp-server. La commande systemctl status isc-dhcp-server
+devrait vous indiquer que le serveur n’a pas réussi à démarrer, ce qui est normal puisqu’il n’est pas
+encore configuré (en particulier, il n’a pas encore d’adresses IP à distribuer).
+
+Pour installer le paquet il faut effectuer la commande ``` sudo apt-get install isc-dhcp-server ```
+
+2. Un serveur DHCP a besoin d’une IP statique. Attribuez de manière permanente l’adresse IP 192.168.100.1
+à l’interface réseau du réseau interne. Vérifiez que la configuration est correcte
+
+Pour configurer l'adresse IP 192.168.100.1 a l'interface du réseau interne il faut modifier le netplan. 
+
+Photo
+
+Puis effectuer les commandes suivante ``` sudo netplan try ; sudo netplan apply ```
+
+Puis activer l'interface ``` sudo ip link set enp0s8 up ```
