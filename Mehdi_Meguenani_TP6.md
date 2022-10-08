@@ -54,7 +54,7 @@ Pour installer le paquet il faut effectuer la commande ``` sudo apt-get install 
 
 Pour configurer l'adresse IP 192.168.100.1 a l'interface du réseau interne il faut modifier le netplan. 
 
-Photo
+![ScreenShotQuestion8](./assetp6/Q2.PNG)
 
 Puis effectuer les commandes suivante ``` sudo netplan try ; sudo netplan apply ```
 
@@ -64,17 +64,17 @@ Puis activer l'interface ``` sudo ip link set enp0s8 up ```
 du fichier existant sous le nom dhcpd.conf.bak puis éditez le fichier dhcpd.conf avec les informations
 suivantes :
 
-Photo
+![ScreenShotQuestion8](./assetp6/Q3.PNG)
 
 4. Editez le fichier /etc/default/isc-dhcp-server afin de spécifier l’interface sur laquelle le serveur
 doit écouter
 
-Photo
+![ScreenShotQuestion8](./assetp6/Q4.PNG)
 
 5. Validez votre fichier de configuration avec la commande dhcpd -t puis redémarrez le serveur DHCP
 (avec la commande systemctl restart isc-dhcp-server) et vérifiez qu’il est actif.
 
-Photo
+![ScreenShotQuestion8](./assetp6/Q5.PNG)
 
 6. Notre serveur DHCP est configuré ! Passons désormais au client. Si vous avez suivi le sujet du TP 1,
 le client a été créé en clonant la machine virtuelle du serveur. Par conséquent, son nom d’hôte est
@@ -83,11 +83,11 @@ est possible qu’il mette un certain temps à démarrer : ceci est dû à l’a
 Comme pour le serveur, désinstallez ensuite cloud-init, puis modifiez le nom de la machine (elle doit
 s’appeler client.tpadmin.local).
 
-Photo
+![ScreenShotQuestion8](./assetp6/Q6.PNG)
 
 9. Vérifiez que les deux machines peuvent communiquer via leur adresse IP, à l’aide de la commande ping.
 
-Photo 
+![ScreenShotQuestion8](./assetp6/Q9.PNG)
 Relatif pas par un / 
 
 10. Modifiez la configuration du serveur pour que l’interface réseau du client reçoive l’IP statique 192.168.100.20 :
