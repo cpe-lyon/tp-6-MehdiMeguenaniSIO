@@ -154,7 +154,7 @@ Afin de copier le fichier db.local il faut effectuer la commande ``` sudo cp db.
 3. Maintenant que nous avons configuré notre fichier de zone, il reste à configurer le fichier de zone inverse,
 qui permet de convertir une adresse IP en nom.
 
-![ScreenShotQuestion8](./assetp6/Q191.PNG)
+![ScreenShotQuestion8](./assetp6/191.PNG)
 
 4. Utilisez les utilitaires named-checkconf et named-checkzone pour valider vos fichiers de configuration :
 
