@@ -10,20 +10,13 @@ On as besoin de 3 bits pour avoir 7 sous réseau
 
 Le sous réseau est donc 172.16.0.0/26
 
-1er sous Réseau : 172.16.0.0/26
-
-2eme sous réseau : 172.16.1.0/26
-
-3eme Sous Reseau : 172.16.1.128/26
-
-4eme Sous Reseau : 172.16.1.192/26
-
-5eme Sous Reseau : 172.16..0.192/26
-
-6eme Sous Reseau : 172.16.0.64/26
-
-7eme Sous Reseau : 172.16.1.64/26 
-
+Pour le sous réséau numéro 1 on a besoin de 38 machines : SOUS RESEEAU= 172.16.0.0/26 BROADCAST = 172.16.0.63 / 1ère et dernière adresse machine : 172.16.0.1 && 172.16.0.62  
+Pour le sous réséau numéro 2 on a besoin de 33 machines/  SOUS RESEAU = 172.16.0.64/26 / BROADCAST = 172.16.0.127 / 1ère et dernière adresse machine : 172.16.0.65 ; 172.16.0.126  
+Pour le sous réséau numéro 3 on a besoin de 52 machines/ ADDRESSE SOUS RESEAU = 172.16.0.128/26 / ADDRESSE BROADCAST = 172.16.0.191 / 1ère et dernière adresse machine : 172.16.0.129 && 172.16.0.190  
+Pour le sous réséau numéro 4 on a besoin de 35 machines/ ADDRESSE SOUS RESEAU = 172.16.0.192/26 / ADDRESSE BROADCAST = 172.16.0.255 / 1ère et dernière adresse machine : 172.16.0.193 && 172.16.0.254  
+Pour le sous réséau numéro 5 on a besoin de 34 machines/ ADDRESSE SOUS RESEAU = 172.16.1.0 /26 / ADDRESSE BROADCAST = 172.16.1.63 / 1ère et dernière adresse machine : 172.16.1.1 && 172.16.1.62  
+Pour le sous réséau numéro 6 on a besoin de 37 machines/ ADDRESSE SOUS RESEAU = 172.16.1.64 /26 / ADDRESSE BROADCAST = 172.16.1.127 / 1ère et dernière adresse machine : 172.16.1.65 && 172.16.1.126  
+Pour le sous réséau numéro 7 on a besoin de 25 machines/  SOUS RESEAU = 172.16.1.128 /27 /  BROADCAST = 172.16.1.159 / 1ère et dernière adresse machine : 172.16.1.129 && 172.16.1.158
 # Exercice 2. Préparation de l’environnement
 
 2. Démarrez le serveur et vérifiez que les interfaces réseau sont bien présentes. A quoi correspond l’interface
