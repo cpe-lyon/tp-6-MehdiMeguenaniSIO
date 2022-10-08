@@ -92,7 +92,7 @@ Relatif pas par un /
 
 10. Modifiez la configuration du serveur pour que l’interface réseau du client reçoive l’IP statique 192.168.100.20 :
 Photo
- Photo10 
+![ScreenShotQuestion8](./assetp6/Q10.PNG)
 
 # Exercice 4. Donner un accès à Internet au client
 
@@ -101,36 +101,37 @@ Photo
 donné que la plupart des utilisateurs n’en ont pas besoin). Pour cela, il suffit de décommenter la ligne
 net.ipv4.ip_forward=1 dans le fichier /etc/sysctl.conf. Pour que les changements soient pris en
 compte immédiatement, il faut saisir la commande sudo sysctl -p /etc/sysctl.conf.
-Photo11 et 111
+![ScreenShotQuestion8](./assetp6/Q11.PNG) 
+![ScreenShotQuestion8](./assetp6/Q111.PNG)
 
 2. Ensuite, il faut autoriser la traduction d’adresse source (masquerading) en ajoutant la règle iptables
 suivante :
 ``` sudo iptables --table nat --append POSTROUTING --out-interface enp0s3 -j MASQUERADE ```
-Photo 12 
+![ScreenShotQuestion8](./assetp6/Q12.PNG)
 
 # Exercice 5. Installation du serveur DNS
 
 1. Sur le serveur, commencez par installer bind9, puis assurez-vous que le service est bien actif
 Pour installer le paquet il faut effectuer la commande ``` sudo apt-get install bind9 ``` et pour vérifier si le services ets bien actif ``` sudo systemctl status binf9 ```
 
-Photo 13
+![ScreenShotQuestion8](./assetp6/Q13.PNG)
 
 2. A ce stade, Bind n’est pas configuré et ne fait donc pas grand chose. L’une des manières les simples
 de le configurer est d’en faire un serveur cache : il ne fait rien à part mettre en cache les réponses de
 serveurs externes à qui il transmet la requête de résolution de nom.
 
-Photo 14 
+![ScreenShotQuestion8](./assetp6/Q14.PNG)
 
 3. Sur le client, retentez un ping sur www.google.fr. Cette fois ça devrait marcher ! On valide ainsi la
 configuration du DHCP effectuée précédemment, puisque c’est grâce à elle que le client a trouvé son
 serveur DNS.
 
-Photo 15
+![ScreenShotQuestion8](./assetp6/Q15.PNG)
 
 4. Sur le client, installez le navigateur en mode texte lynx et essayez de surfer sur fr.wikipedia.org
 (bienvenue dans le passé...)
 
-Photo 16 
+![ScreenShotQuestion8](./assetp6/Q16.PNG)
 
 # Exercice 6. Configuration du serveur DNS pour la zone tpadmin.local
 
@@ -139,7 +140,7 @@ zone "tpadmin.local" IN {
 type master; // c'est un serveur maître
 file "/etc/bind/db.tpadmin.local"; // lien vers le fichier de définition de zone
 };
-Photo 17
+![ScreenShotQuestion8](./assetp6/Q17.PNG)
 
 2. Créez une copie appelée db.tpadmin.local du fichier db.local. Ce fichier est un fichier configuration
 typique de DNS, constitué d’enregistrements DNS (cf. cours). Dans le nouveau fichier, remplacez
@@ -148,12 +149,14 @@ serveur
 
 Afin de copier le fichier db.local il faut effectuer la commande ``` sudo cp db.local db.tpadmin.local  (Il faut être dans le dossier) ```  
 
-Photo 18 
+![ScreenShotQuestion8](./assetp6/Q18.PNG)
 
 3. Maintenant que nous avons configuré notre fichier de zone, il reste à configurer le fichier de zone inverse,
 qui permet de convertir une adresse IP en nom.
 
-Photo 19 
+![ScreenShotQuestion8](./assetp6/Q191.PNG)
 
+4. Utilisez les utilitaires named-checkconf et named-checkzone pour valider vos fichiers de configuration :
 
+![ScreenShotQuestion8](./assetp6/test.PNG)
 
